@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xmlns:dubbox="http://dubbox.aic.com/schema/rest/client"
+    xsi:schemaLocation="
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://code.alibabatech.com/schema/dubbo
+          http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+          http://dubbox.aic.com/schema/rest/client http://dubbox.aic.com/schema/rest/client/dubbox-rest-client.xsd">
+	
+	
+	<bean id="DubboRestClient_SYS" class="com.binary.framework.dubbo.rest.DubboRestClient">
+		<constructor-arg value="${dubbox.rest.root.sys}" />
+	</bean>
+	<bean id="DubboRestClient_RES" class="com.binary.framework.dubbo.rest.DubboRestClient">
+		<constructor-arg value="${dubbox.rest.root.res}" />
+	</bean>
+	<bean id="DubboRestClient_DEV" class="com.binary.framework.dubbo.rest.DubboRestClient">
+		<constructor-arg value="${dubbox.rest.root.dev}" />
+	</bean>
+	
+	<dubbox:rest id="DubboxRest_SysFrameSvc" interface="com.aic.paas.frame.cross.rest.SysFrameSvc" client="DubboRestClient_SYS" />
+	<dubbox:rest id="DubboxRest_MerchentSvc" interface="com.aic.paas.frame.cross.rest.MerchentSvc" client="DubboRestClient_SYS" />
+	
+	<dubbox:rest id="DubboxRest_PcProductSvc" interface="com.aic.paas.cdev.rest.PcProductSvc" client="DubboRestClient_DEV" />
+	<dubbox:rest id="DubboxRest_PcProjectSvc" interface="com.aic.paas.cdev.rest.PcProjectSvc" client="DubboRestClient_DEV" />
+	<dubbox:rest id="DubboxRest_VcMntRepositoryApplySvc" interface="com.aic.paas.cdev.rest.VcMntRepositoryApplySvc" client="DubboRestClient_DEV" />
+	
+	<dubbox:rest id="DubboxRest_PcCompRoomSvc" interface="com.aic.paas.cdev.rest.PcCompRoomSvc" client="DubboRestClient_RES" />
+	
+	
+		
+</beans>
+
+
+
