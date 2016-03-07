@@ -399,7 +399,7 @@ function ProjectUtils() {
 		var ls = DROP[def];
 		if(!CU.isEmpty(ls)) {
 			for(var i=0; i<ls.length; i++) {
-				html.push("<option value=\""+ls[i].code+"\">"+ls[i].name+"</option>");
+				html.push("<option width=\"160px\" value=\""+ls[i].code+"\">"+ls[i].name+"</option>");
 			}
 		}
 		return html.join("");
