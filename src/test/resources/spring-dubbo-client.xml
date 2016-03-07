@@ -14,11 +14,11 @@
 	<bean id="DubboRestClient_SYS" class="com.binary.framework.dubbo.rest.DubboRestClient">
 		<constructor-arg value="${dubbox.rest.root.sys}" />
 	</bean>
-	<bean id="DubboRestClient_RES" class="com.binary.framework.dubbo.rest.DubboRestClient">
-		<constructor-arg value="${dubbox.rest.root.res}" />
-	</bean>
 	<bean id="DubboRestClient_DEV" class="com.binary.framework.dubbo.rest.DubboRestClient">
 		<constructor-arg value="${dubbox.rest.root.dev}" />
+	</bean>
+	<bean id="DubboRestClient_DEP" class="com.binary.framework.dubbo.rest.DubboRestClient">
+		<constructor-arg value="${dubbox.rest.root.dep}" />
 	</bean>
 	
 	<dubbox:rest id="DubboxRest_SysFrameSvc" interface="com.aic.paas.frame.cross.rest.SysFrameSvc" client="DubboRestClient_SYS" />
@@ -28,7 +28,7 @@
 	<dubbox:rest id="DubboxRest_PcProjectSvc" interface="com.aic.paas.cdev.rest.PcProjectSvc" client="DubboRestClient_DEV" />
 	<dubbox:rest id="DubboxRest_VcMntRepositoryApplySvc" interface="com.aic.paas.cdev.rest.VcMntRepositoryApplySvc" client="DubboRestClient_DEV" />
 	
-	<dubbox:rest id="DubboxRest_PcCompRoomSvc" interface="com.aic.paas.cdev.rest.PcCompRoomSvc" client="DubboRestClient_RES" />
+	<dubbox:rest id="DubboxRest_PcCompRoomSvc" interface="com.aic.paas.cdev.rest.PcCompRoomSvc" client="DubboRestClient_DEP" />
 	
 	
 		
