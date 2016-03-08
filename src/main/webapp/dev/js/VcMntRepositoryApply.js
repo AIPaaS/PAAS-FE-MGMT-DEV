@@ -124,8 +124,7 @@ function query(pageNum){
 							value:url,
 							validate: function(value) {
 								if($.trim(value) == "") return "请输入版本库URL.";
-								if($.trim(value).length>300) return "最长不能超过300.";
-								
+								if($.trim(value).length>200) return "最长不能超过200.";
 					        },
 					        savenochange:true,
 							url: function (pps) {
