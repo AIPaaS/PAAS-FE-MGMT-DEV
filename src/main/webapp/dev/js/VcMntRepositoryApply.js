@@ -126,6 +126,7 @@ function query(pageNum){
 								if($.trim(value) == "") return "请输入版本库URL.";
 								if($.trim(value).length>300) return "最长不能超过300.";
 					        },
+					        savenochange:true,
 							url: function (pps) {
 								return openUpGit(pps.pk, pps.value);
 							}
