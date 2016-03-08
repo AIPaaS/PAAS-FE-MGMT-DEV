@@ -123,7 +123,8 @@ function query(pageNum){
 							display:false,
 							value:url,
 							validate: function(value) {
-					           if($.trim(value) == "") return "请输入版本库URL.";
+								if($.trim(value) == "") return "请输入版本库URL.";
+								if($.trim(value).length>300) return "最长不能超过300.";
 					        },
 							url: function (pps) {
 								return openUpGit(pps.pk, pps.value);
