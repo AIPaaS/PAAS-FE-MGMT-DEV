@@ -15,7 +15,7 @@
 		<constructor-arg value="${dubbox.rest.root.sys}" />
 	</bean>
 	<bean id="DubboRestClient_RES" class="com.binary.framework.dubbo.rest.DubboRestClient">
-		<constructor-arg value="${dubbox.rest.root.res}" />
+		<constructor-arg value="${dubbox.rest.root.dep}" />
 	</bean>
 	<bean id="DubboRestClient_DEV" class="com.binary.framework.dubbo.rest.DubboRestClient">
 		<constructor-arg value="${dubbox.rest.root.dev}" />
